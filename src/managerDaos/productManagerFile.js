@@ -7,7 +7,7 @@ class ProductManagerFile{
         this.path = path
     }
 
-    readFile = async () => {
+    async readFile() {
         try {
             const data = await fs.promises.readFile(this.path, 'utf-8')
             console.log(data)
@@ -18,7 +18,7 @@ class ProductManagerFile{
         
     }
 
-    getProducts = async () => {
+    async getProducts (){
         try {
             return await this.readFile()
         } catch (error) {
@@ -27,7 +27,7 @@ class ProductManagerFile{
     }
 
     
-    getProductById = async (id) => {
+    async getProductById(id){
         try {
             const products = await this.readFile()
             return products.find(product => product.id === id)                     
@@ -37,7 +37,7 @@ class ProductManagerFile{
     }
     
     
-    addProduct = async (newItem) => {
+    async addProduct(newItem){
         try {   
             
             let products = await this.readFile()
