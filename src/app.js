@@ -1,15 +1,13 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
 // import express from 'express'
-const { uploader } = require('./utils/multer')
-const userRouter = require('./routes/users.router')
-const productRouter = require('./routes/products.router')
 const viewsRouter = require('./routes/views.router')
+require('dotenv').config()
 //__________________________________________________________________________
 const { Server } = require('socket.io')
 
 const app = express()
-const PORT = 8080
+const PORT = 8080 || process.env.PORT
 
 const httpServer = app.listen(PORT,()=>{
     console.log(`Escuchando en el puerto: ${PORT}`)
