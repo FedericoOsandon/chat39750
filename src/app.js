@@ -37,18 +37,8 @@ app.use(cookieParser())
 
 app.use('/', viewsRouter)
 
-// http://localhost:8080 /api/usuarios
-app.use('/api/usuarios',  userRouter)
 
-app.use('/api/productos', productRouter)
-// app.use('/api/carrito', carritoRouter)
 
-app.post('/single', uploader.single('myfile'), (req, res)=>{
-    res.status(200).send({
-        status: 'success',
-        message: 'se subió correctamente'
-    })
-})
 
 let messages = []
 
